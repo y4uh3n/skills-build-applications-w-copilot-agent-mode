@@ -1,7 +1,11 @@
 import useApiCollection from '../hooks/useApiCollection';
 
+const workoutsEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+  : '/api/workouts/';
+
 function Workouts() {
-  const { items: workouts, loading, error } = useApiCollection('/api/workouts/');
+  const { items: workouts, loading, error } = useApiCollection(workoutsEndpoint);
 
   return (
     <div className="container py-4">

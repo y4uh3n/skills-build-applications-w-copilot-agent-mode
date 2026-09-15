@@ -1,7 +1,11 @@
 import useApiCollection from '../hooks/useApiCollection';
 
+const leaderboardEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`
+  : '/api/leaderboard/';
+
 function Leaderboard() {
-  const { items: entries, loading, error } = useApiCollection('/api/leaderboard/');
+  const { items: entries, loading, error } = useApiCollection(leaderboardEndpoint);
 
   return (
     <div className="container py-4">
