@@ -1,7 +1,7 @@
 import useApiCollection from '../hooks/useApiCollection';
 
 function Users() {
-  const { items: users, loading, error } = useApiCollection('users');
+  const { items: users, loading, error } = useApiCollection('/api/users/');
 
   return (
     <div className="container py-4">

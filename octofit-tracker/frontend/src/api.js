@@ -7,6 +7,9 @@ export const API_BASE_URL = codespaceName
   : 'http://localhost:8000/api';
 
 export function apiUrl(resource) {
+  if (resource.startsWith('/api/')) {
+    return `${API_BASE_URL.replace(/\/api$/, '')}${resource}`;
+  }
   return `${API_BASE_URL}/${resource}/`;
 }
 

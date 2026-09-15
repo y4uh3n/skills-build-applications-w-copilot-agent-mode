@@ -1,7 +1,7 @@
 import useApiCollection from '../hooks/useApiCollection';
 
 function Leaderboard() {
-  const { items: entries, loading, error } = useApiCollection('leaderboard');
+  const { items: entries, loading, error } = useApiCollection('/api/leaderboard/');
 
   return (
     <div className="container py-4">

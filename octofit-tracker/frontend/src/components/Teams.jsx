@@ -1,7 +1,7 @@
 import useApiCollection from '../hooks/useApiCollection';
 
 function Teams() {
-  const { items: teams, loading, error } = useApiCollection('teams');
+  const { items: teams, loading, error } = useApiCollection('/api/teams/');
 
   return (
     <div className="container py-4">

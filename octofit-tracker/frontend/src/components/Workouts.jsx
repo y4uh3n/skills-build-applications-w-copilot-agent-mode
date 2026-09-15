@@ -1,7 +1,7 @@
 import useApiCollection from '../hooks/useApiCollection';
 
 function Workouts() {
-  const { items: workouts, loading, error } = useApiCollection('workouts');
+  const { items: workouts, loading, error } = useApiCollection('/api/workouts/');
 
   return (
     <div className="container py-4">
